@@ -12,7 +12,9 @@ factorial = function (input) {
   return total
 };
 
-
+function factorial2(n) {  //using recursive call
+  return (n !== 1) ? n * factorial(n - 1) : 1;
+}
 
 
 
