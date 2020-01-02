@@ -1,3 +1,10 @@
+//function should accept a string and strip any characters that are not
+// 'F', 'L' or 'R'  (forward, left, right)
+// this string should srive a robot around a 2d grid and it's final position
+//and orientation tracked
+//the output should be the minimum number of moves (L,R,F only) to get back to
+//starting point 
+
 fLR = function (input) {
   let commandsArray = input.split("")
   commandsArray = commandsArray.filter(char => char === 'F' || char === 'L' || char === 'R')
