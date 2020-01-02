@@ -1,3 +1,5 @@
+//NB! Using var as oer the tech test requirement
+
 factorial = function (input) {
   if (typeof input !== "number") { return 0 }
   else if (input === 1) {
@@ -19,3 +21,15 @@ function factorial2(n) {  //using recursive call
 
 
 console.log(factorial(3))
+
+
+secondHighestDigit = function (input) {
+  if (typeof input !== "string") { return input }
+  var numbersArray = []
+  numbersArray = input.match(/\d+/g)
+  if (!numbersArray || numbersArray[0].length === 1) { return -1 }
+  numbersArray = numbersArray[0].split("")
+  numbersArray = numbersArray.sort().reverse()
+  console.log("the numbers array", numbersArray)
+  return parseInt(numbersArray[1])
+};
