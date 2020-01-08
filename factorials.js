@@ -14,13 +14,14 @@ factorial = function (input) {
   return total
 };
 
-function factorial2(n) {  //using recursive call
+//using recursive call
+const factorial2 = (n) => {
   return (n !== 1) ? n * factorial(n - 1) : 1;
 }
 
 
 
-console.log(factorial(3))
+console.log(factorial2(-14))
 
 
 secondHighestDigit = function (input) {
