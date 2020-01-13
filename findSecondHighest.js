@@ -15,3 +15,5 @@ secondHighestDigit = function (input) {
 
 
 console.log(secondHighestDigit("32247256345"))
+
+//check
