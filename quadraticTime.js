@@ -7,7 +7,6 @@
 // }
 
 let arr1 = [1, 2, 3, 4, 5]
-let x = 0
 
 arr1 = arr1.map((num) => {
   let new_num = arr1.map((inner_num) => inner_num * num)

@@ -22,7 +22,7 @@ let x = 0
 do {
   array.push(Math.ceil(Math.random() * 100))
   x++
-} while (x < 10000)
+} while (x < 5)
 
 console.time('bubble_Sort')
 
