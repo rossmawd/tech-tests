@@ -2,6 +2,8 @@
 //finds the second highest digit in a string of digits
 //using var instead of let as per tech test requirement
 
+
+
 secondHighestDigit = function (input) {
   if (typeof input !== "string") { return input }
   var numbersArray = []
@@ -13,7 +15,11 @@ secondHighestDigit = function (input) {
   return parseInt(numbersArray[1])
 };
 
+console.time('secondHighestDigit'); //Times the function!
 
 console.log(secondHighestDigit("32247256345"))
+
+console.timeEnd('secondHighestDigit');
+
 
 //check
