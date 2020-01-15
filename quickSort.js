@@ -34,3 +34,17 @@ function swap(arr, i, j) {
   arr[j] = temp;
 }
 
+let toSort = []
+let x = 0
+do {
+  toSort.push(Math.ceil(Math.random() * 100))
+  x++
+} while (x < 10)
+
+console.time('quickSort')
+
+console.log(quickSort(toSort, 0, toSort.length - 1));
+
+console.timeEnd('quickSort')
+
+// console.log(toSort.slice(0, 3), toSort.slice(3))
