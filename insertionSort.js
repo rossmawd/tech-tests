@@ -17,7 +17,7 @@ let x = 0
 do {
   toSort.push(Math.ceil(Math.random() * 100))
   x++
-} while (x < 10)
+} while (x < 1000000)
 
 console.time('insertionSort')
 
