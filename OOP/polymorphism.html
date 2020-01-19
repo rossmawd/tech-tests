@@ -1,0 +1,37 @@
+<title> Polymorphism </title>
+
+<body>
+  <h2> Polymorphism</h2> 
+
+  <script type= "text/javascript">
+
+    class Animal {
+      constructor (name) {
+        this.name = name
+      } 
+
+      makeSound () {
+        console.log("generic animal sound")
+      }
+    }
+
+    class Dog extends Animal {
+      constructor (name) {
+        super(name)  //makes it call the constuctor of the parent 
+      
+      }
+
+      makeSound() {
+        console.log("Woof")
+      }
+    }
+
+    const a1 = new Animal('Dom')
+    const a2 = new Dog("Jeff")
+     a1.makeSound()
+     a2.makeSound()
+  </script>
+
+
+</body>
+
