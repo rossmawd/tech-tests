@@ -80,7 +80,8 @@
         alert(string);
       };
 
-      Person.prototype.greeting = function() {
+//methods defined outside of the CONSTRUCTIR:
+      Person.prototype.greeting = function() { 
         alert('Hi! I\'m ' + this.name.first + '.');
       };
 
