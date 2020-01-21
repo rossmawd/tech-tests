@@ -9,22 +9,27 @@ longestPalindrome = function (s) {
   let reversedString = s.split('').reverse().join("")
   let winningLength = 0
   let currentLength = 2
+  let winningPalendrome
   let test = true
 
   for (let i = 0; i < originalString.length; i++) {
+    currentLength = 2
 
     if (originalString.includes(reversedString.substr(i, currentLength))) {
-      winningLength = currentLength
-      currentLength++
-      console.log("the current length is", currentLength)
+
+
       do {
         console.log("the currentLength is ", currentLength)
-
-        test = originalString.includes(reversedString.substr(i, currentLength))
+        currentLength++
+        let currentPalendrome = reversedString.substr(i, currentLength)
+        test = originalString.includes(currentPalendrome)
         if (test) {
           console.log(" the original string includes", reversedString.substr(i, currentLength))
-          currentLength > winningLength ? winningLength = currentLength : null
-          currentLength++
+          if (currentLength > winningLength) {
+            winningLength = currentLength
+            winningPalendrome = currentPalendrome
+          }
+
 
         }
       } while (test && currentLength < (originalString.length - i))
@@ -32,11 +37,11 @@ longestPalindrome = function (s) {
     }
   }
 
-  return winningLength
+  return { "length": winningLength, "palendrome": winningPalendrome }
 }
 
 
 
 
 
-console.log(longestPalindrome("gfracecarns"))
+console.log(longestPalindrome("kjahfkjsaracecarhsdfk"))
