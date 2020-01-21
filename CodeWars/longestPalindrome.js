@@ -13,10 +13,10 @@ longestPalindrome = function (s) {
   let test = true
 
   for (let i = 0; i < originalString.length; i++) {
-    currentLength = 2
+
 
     if (originalString.includes(reversedString.substr(i, currentLength))) {
-
+      currentLength = 1
 
       do {
         console.log("the currentLength is ", currentLength)
@@ -26,17 +26,15 @@ longestPalindrome = function (s) {
         if (test) {
           console.log(" the original string includes", reversedString.substr(i, currentLength))
           if (currentLength > winningLength) {
-            winningLength = currentLength
+            winningLength = currentPalendrome.length
             winningPalendrome = currentPalendrome
           }
-
 
         }
       } while (test && currentLength < (originalString.length - i))
 
     }
   }
-
   return { "length": winningLength, "palendrome": winningPalendrome }
 }
 
@@ -44,4 +42,4 @@ longestPalindrome = function (s) {
 
 
 
-console.log(longestPalindrome("kjahfkjsaracecarhsdfk"))
+console.log(longestPalindrome("racecar is racecar backwards"))
