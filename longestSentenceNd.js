@@ -1,5 +1,4 @@
 
-//original is in TYPESCRPT
 
 function solution(S) {
   // write your code in Java SE 8
@@ -11,7 +10,7 @@ function solution(S) {
     words.length > maxWords ? maxWords = words.length : null
   })
 
-  return maxWords
+  return { maxWords, sentences }
 }
 
 
