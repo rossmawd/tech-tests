@@ -8,9 +8,8 @@ let sum = function (x, y, z) {
 }
 
 let numbers = [1, 2, 3];
-
 console.log(sum(...numbers));
-// expected output: 6
+// output: 6
 
 //alternative where the first argument is the value of 'this' for the function apply is called upon
 console.log(sum.apply(null, numbers));

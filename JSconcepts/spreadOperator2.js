@@ -38,23 +38,29 @@ console.log(Math.min(...numbers))
 let myObj = { name: "Ross", home: "London", specialSkill: "beatSabre", favFood: "sweet potatoes" }
 
 let { name, home, ...others } = myObj
-
 console.log("The spread operator creates a new object with the remaining key/values", others)
 
 others.favFood = "sushi"
 
 console.log(others)
 
+let originalObj = {
+  name: "Ross", home: "London", specialSkills: { beatSabre: 4, cooking: 2 },
+  favFoods: ["sushi", "sweet potatoes"]
+}
 
-//deep copy!
-let copyObj = myObj
+let copyObj = originalObj
 copyObj.name = "Dave"
-console.log("we've changed the original!", myObj)
-let deepCopy = { ...myObj }
-deepCopy.home = "Tokyo"23
-console.log("Dave still lives in London:", myObj.home)
-//copy and amend the copy at the same time:
-//let deepCopy2 = { ...myObj, specialSkill: "cooking" }
-let deepCopy2 = { specialSkill: "cooking", ...myObj }
-//console.log("Dave can now cook", deepCopy2)
-console.log("Dave can now cook", deepCopy2)
+console.log("Whoops! The original has been changed!: ", originalObj)
+let spreadCopy = { ...originalObj }
+spreadCopy.home = "Tokyo"
+console.log("Dave still lives in London:", originalObj.home)
+
+let spreadCopy2 = { ...originalObj }
+// the below WILL change the originalObj! as spread only copies 1 nesting deep
+spreadCopy2.specialSkills.beatSabre = 10
+
+console.log("Nested objects aren't copied!", originalObj.specialSkills.beatSabre)
+
+//what about nested arrays?
+
