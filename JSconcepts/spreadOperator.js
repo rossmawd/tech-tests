@@ -55,3 +55,15 @@ console.log("Copy:", copyOfObj)
 // is it irrritating that my open and close brackets both appear at the same time and
 // the cursor moves in between them? I HAVE to reach for the down arrow to move to the next line
 
+
+//destructuring (REST operator)
+let myObj2 = { name: "Ross", home: "London", specialSkill: "beatSabre", favFood: "sweet potatoes" }
+
+let { name, home, ...others } = myObj2
+console.log("The spread operator creates a new object with the remaining key/values", others)
+
+others.favFood = "sushi"
+
+console.log(others)
+
+

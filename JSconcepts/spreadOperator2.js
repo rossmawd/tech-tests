@@ -34,15 +34,6 @@ let numbers = [33, 2, 23, 198, 3]
 console.log(Math.min(...numbers))
 
 
-//destructuring
-let myObj = { name: "Ross", home: "London", specialSkill: "beatSabre", favFood: "sweet potatoes" }
-
-let { name, home, ...others } = myObj
-console.log("The spread operator creates a new object with the remaining key/values", others)
-
-others.favFood = "sushi"
-
-console.log(others)
 
 let originalObj = {
   name: "Ross", home: "London", specialSkills: { beatSabre: 4, cooking: 2 },
@@ -63,4 +54,19 @@ spreadCopy2.specialSkills.beatSabre = 10
 console.log("Nested objects aren't copied!", originalObj.specialSkills.beatSabre)
 
 //what about nested arrays?
+spreadCopy2.favFoods[0] = "curry"
+
+console.log(originalObj.favFoods)
+//output: [ 'curry', 'sweet potatoes' ]
+//nested array's aren't safe either!
+
+let { name, home, specialSkills: { ...specialSkills }, favFoods: { ...favFoods } } = originalObj
+// specialSkills = { ...specialSkills }
+// favFoods = [...favFoods]
+
+specialSkills.cooking = 9001
+favFoods[1] = "marmite"
+
+console.log(originalObj.specialSkills.cooking, originalObj.favFoods[1])
+
 
